@@ -1,0 +1,281 @@
+        <!DOCTYPE html>
+        <html lang="en">
+            <head >
+                <title>signup page</title>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width , initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+            <style>
+                    .m{
+                        background: url("arn.jpg") no-repeat ;
+                        width:100%;
+                        height:100%;
+                    }
+                    .form-control{
+                        width:50%;
+                      }</style>
+            </head>
+            <body onload="document.getElementById('btn').disabled=true">
+
+                <div class=" container m">
+                    <div class= "jumbotron text-center text-info">
+                        <h1><b><i>SIGN UP</i></b></h1>
+                    </div>
+                        <div class="row">
+                        <div class="col-sm-6">
+                        <b>  Firstname:</b>
+                            <input type="text" name="firstname" class="form-control" id="fname" placeholder="Firstname" onchange="btndis(1)" oninput="firstname(check)">
+                        <span id="msg"></span>
+                       </div>
+                        <div class="col-sm-6">
+                        <b> Lastname:</b>
+                    <input type="text" name="lastname" class="form-control" id="lname" placeholder="Lastname" onchange="btndis(2)" oninput="lastname(check3)">
+                            <span id="msg3"></span><br>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-6">
+                    <b>  Gender:</b><br>
+                               <input type="radio" name="gender" id="mgender"  value="male" onchange="btndis(3)" checked >male
+                                <input type="radio" name="gender" id="fgender" value="female" onchange="btndis(3)"checked >female</div>
+
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12" >
+                        <b>  Course:<br></b>
+                 <select name="course" class="form-control" id="course" onchange="b('course','branch'),btndis(4)">
+                    <option value="select">select</option>
+                     <option value="B.tech">B.tech</option>
+                     <option value="Bpharma">Bpharma</option>
+                     <option value="Bca">Bca</option>
+                     <option value="Mca">Mca</option>
+                     <option value="Mba">Mba</option>
+                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-6">
+                            <b>Phoneno.</b><br>
+                            <input type="text" name="phone no." id="phone" class="form-control" placeholder="Phone no."  onchange="btndis(5)"  oninput="phoneno(check2)">
+            <span id="msg2"></span>
+                            </div>
+                            <div class="col-sm-6" >
+                                <b>E-mail:</b><br>
+                                <input type="text" onchange="btndis(6)" name="e-mail"  id="e-mail" class="form-control" placeholder="E-mail" oninput="email(check1)">
+                                <span id="msg1"></span>
+    </div>
+                        </div>
+
+                        <div class="row">
+                    <div class="col-sm-12" >
+                        <b>Branch:<br></b>
+                        <select name="Branch" class="form-control" id="branch" onchange="btndis(7)"  >
+                        <option value="select">select</option>    
+                        </select>
+                            </div>
+                    </div><br> 
+                        <div class="text-center">
+                        <input type="button"  value="submit" onclick= "tbbtn(),hide()" class="btn btn-primary" id="btn" >
+
+                    </div><br>
+                        <table class= "table table-striped table table-hover" id="tb" style="display:none">
+                        <thead>
+                        <tr>
+                            <th >Name</th>
+                            <th >Gender</th>
+                            <th >Course</th>
+                            <th >Branch</th>
+                            <th>Phone No.</th>
+                            <th>E-mail</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="na">null</td>
+                                    <td id="ge">null</td>
+                                    <td id="co">null</td>
+                                    <td id="br">null</td>
+                                    <td id="ph">null</td>
+                                    <td id="em">null</td>
+                               </tr>
+                            </tbody>
+                            </table>
+                            <script type="text/javascript">
+             function tbbtn() {  
+
+                    var y=document.getElementById("fname").value;
+                    var z=document.getElementById("lname").value;
+                    var x=y+" "+ z;
+                   if(document.getElementById("fgender").checked){
+                        var a= "female";
+                    }
+                   else if(document.getElementById("mgender").checked){
+                     var a= "male";
+                 }
+                    var b=document.getElementById("course").value;
+                    var c=document.getElementById("branch").value;
+                    var d=document.getElementById("phone").value;
+                    var e=document.getElementById("e-mail").value;
+
+                    document.getElementById("na").innerHTML=x;
+                    document.getElementById("ge").innerHTML=a;
+                    document.getElementById("co").innerHTML=b;
+                    document.getElementById("br").innerHTML=c;
+                    document.getElementById("ph").innerHTML=d;
+                    document.getElementById("em").innerHTML=e;
+                        }
+                        </script>
+            <script>           
+
+                         function b(c,b){
+                        var c=document.getElementById(c);
+                        var b=document.getElementById(b);
+
+                        b.innerHTML="";
+                        if(c.value=="B.tech"){
+                         var optionArray=["cse|Cse","ece|Ece","it|It","en|En","ce|Ce","me|Me"]   
+
+                        for(var option in optionArray){
+                            var pair=optionArray[option].split("|");
+                            var newOption=document.createElement("option");
+                            newOption.value=pair[0];
+                            newOption.innerHTML=pair[1];
+                            b.options.add(newOption);
+                        }
+                        }else if(c.value=="Bpharma"){
+                         var optionArray=["ksop|Ksop"]   
+
+                        for(var option in optionArray){
+                            var pair=optionArray[option].split("|");
+                            var newOption=document.createElement("option");
+                            newOption.value=pair[0];
+                            newOption.innerHTML=pair[1];
+                            b.options.add(newOption);}}
+                         else if(c.value=="Mca"){
+                         var optionArray=["mca|Mca"]   
+                        for(var option in optionArray){
+                            var pair=optionArray[option].split("|");
+                            var newOption=document.createElement("option");
+                            newOption.value=pair[0];
+                            newOption.innerHTML=pair[1];
+                            b.options.add(newOption);}}
+                           else if(c.value=="Bca"){
+                         var optionArray=["bca|Bca"]   
+
+                        for(var option in optionArray){
+                            var pair=optionArray[option].split("|");
+                            var newOption=document.createElement("option");
+                            newOption.value=pair[0];
+                            newOption.innerHTML=pair[1];
+                            b.options.add(newOption);
+                        }}else if(c.value=="Mba"){
+
+                            var optionArray=["mba|Mba"]   
+
+                        for(var option in optionArray){
+                            var pair=optionArray[option].split("|");
+                            var newOption=document.createElement("option");
+                            newOption.value=pair[0];
+                            newOption.innerHTML=pair[1];
+                            b.options.add(newOption);
+                        }}
+                    }
+            </script>
+                          <script type="text/javascript">
+                                var check=0;
+      function firstname(text){                 
+                                     
+                                     var user=document.getElementById("fname").value;
+                                      var i;
+                                    document.getElementById("msg").innerHTML=null;
+
+                        if(!isNaN(user)){
+                            document.getElementById("msg").innerHTML="invalid firstname";
+                        check++;
+                      }
+                 for(i=0;i<=user.length;i++){
+                        if(user[i]>='0' && user[i]<'65'|| user[i]>'90'&& user[i]<='127'){
+                        document.getElementById("msg").innerHTML="invalid firstname";
+                            check++;
+                        }
+                        }
+                                 return(check);
+                                 }
+                            var check1 = 0;  
+     function email(text){
+                               document.getElementById("msg1").innerHTML=null;
+                                var user1=document.getElementById("e-mail").value;
+                            if(user1.indexOf('@')<=0){
+                            document.getElementById("msg1").innerHTML="invalid email";
+                            check1++;
+                        }
+                    if((user1.charAt(user1.length-4)!='.')&&(user1.charAt(user1.length-3)!='.')){
+                           document.getElementById("msg1").innerHTML="invalid email";
+                            check1++;
+                        }
+                                return(check1);
+                         }
+                 var check2=0;
+    function phoneno(text){
+                                    document.getElementById("msg2").innerHTML=null;
+                                    var user2=document.getElementById("phone").value;
+                              if(isNaN(user2)){
+                    document.getElementById("msg2").innerHTML="invalid no.";
+                            check2++ ;
+                         }
+                         if(user2.length!=10){
+                document.getElementById("msg2").innerHTML="invalid no.";
+                             check2++;
+                                }
+                                   return(check2);
+                         }
+                  var check3=0;
+     function lastname(text){
+                             var user3=document.getElementById("lname").value;
+                             var i;
+                          document.getElementById("msg3").innerHTML=null;
+                           if(!isNaN(user3)){
+                           document.getElementById("msg3").innerHTML="invalid last name";
+                               check3++;
+                        }
+                    for(i=0;i<=user3.length;i++){
+                        if(user3[i]>='0' && user3[i]<'65'|| user3[i]>'90'&& user3[i]<='127'){
+                           document.getElementById("msg3").innerHTML="invalid last name";
+                            check3++;
+                        }
+                    }
+                      return (check3);
+                      }
+    function btndis(text){ 
+                                  var count1=document.getElementById("fname").value;
+                                  var count2=document.getElementById("lname").value;
+                                  var count3=document.getElementById("branch").value;
+                                  var count4=document.getElementById("mgender").value;
+                                  var count5=document.getElementById("e-mail").value;
+                                  var count6=document.getElementById("phone").value;
+                                  var count7=document.getElementById("course").value;
+                                  if((check!=0 || check1!=0 ||check2!=0 || check3!=0)||(count1=="" || count2=="" || count3=="" || count4=="" || count5=="" || count6=="" || count7=="")){
+                                      document.getElementById("btn").disabled=true;
+                                  }
+                                  else{
+                                      document.getElementById("btn").disabled=false;
+                                    }
+                                 }
+    function hide()  {                             
+                                    if(document.getElementById('btn').disabled==true)
+                                    {
+                                        document.getElementById('tb').style.display='none';
+                                    }
+                                    else{
+                                        document.getElementById('tb').style.display='block';
+                                    }
+
+                                }
+                        </script>  
+
+                        </div>
+                    </body>
+                </html>
