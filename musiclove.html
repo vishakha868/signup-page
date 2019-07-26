@@ -1,0 +1,371 @@
+        <html>
+        <head>
+            <title>login and signup </title> <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width , initial-scale=1">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+         <script>
+            $(document).ready(function(){
+            $(".login-form").hide();
+                $(".login").css("background","none");
+                $(".login").click(function(){
+                                  $(".signup-form").hide();
+                    $(".login-form").show();
+                    $(".signup").css("background","none");
+                    $(".login").css("background","#34b3a0")
+                                  });
+
+                $(".signup").click(function(){
+                 $(".signup-form").show();
+                    $(".login-form").hide();
+                    $(".login").css("background","none");
+                    $(".signup").css("background","#34b3a0")
+                                  });
+                 });
+
+
+            </script>
+
+            <style>
+                *{      margin:0;
+                    padding:0;
+                    user-select: none;
+                }
+
+
+
+                body{
+
+                   background:blanchedalmond;
+                }
+                #img{
+                    width:400px;
+                    height:400px;
+                    margin-right: 200%;
+                }
+                .signup{
+                    width:40%;
+                    background:#34b3a0;
+                    border:1px solid white;
+                    box-shadow:5px 5px black;
+                    border-radius:15px 15px;
+                    height:40px;
+                    float:left;
+                    text-align:center;
+                    line-height: 50px;
+                    cursor:pointer;
+                    text-transform: uppercase; 
+                    color:darkblue;
+                    margin-left:45px;
+
+                } .login{
+                    width:40%;
+                    background:#34b3a0;
+                    border:1px solid white;
+                    box-shadow:5px 5px black;
+                    border-radius:15px 15px;
+                    height:40px;
+                    float:left;
+                    text-align:center;
+                    line-height: 50px;
+                    cursor:pointer;
+                    text-transform: uppercase; 
+                    color:darkblue;
+                    margin-left:40px;
+
+                } 
+
+
+                .navbar-item{
+                    left:100%;
+                    padding-left:30px;
+                    text-decoration: underline;
+                     position:inherit;
+
+                }
+                .navbar-brand{
+                  font-style: oblique;
+                    font-family: serif;
+                }
+                .signup-form,.login-form{
+                    box-sizing: border-box;
+                    padding: 40px;
+                    
+                    width:100%;
+                    height:400px;
+                    background:rgba;
+
+                }
+                .form-control{
+                  margin-bottom:25px;
+                    border:2px solid #e9eaea;
+                                        transition:all 0.5s ease;
+
+
+                }
+                #btn{
+                    width:20%;
+                    background:#34b3a0;
+                    height:40px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color:darkblue;
+                    border-radius:15px 19px;        
+                    letter-spacing: 1px;
+                    cursor:pointer;
+                    margin-bottom: 30px;
+                    align-content: center;
+                    box-shadow:2px 5px black;
+    margin-right: 105px;
+                }
+
+                #btn1{
+                    width:50%;
+                    background:#34b3a0;
+                    height:40px;
+                    text-align: center;
+                    border-radius:15px 15px ;
+                    text-transform: uppercase;
+                    color:darkblue;
+                    letter-spacing: 1px;
+                    cursor:pointer;
+                    align-content: center;
+                     box-shadow:2px 5px black;
+                    margin-left:180px;
+
+                }
+                #micon{
+                    position:inherit;
+                }
+                #a{
+                letter-spacing:5px;
+                color:black !important;
+                }
+                h1{
+                    margin-right: 190px;
+                }
+
+
+            </style>
+                </head>
+               <body onload="document.getElementById('btn').disabled=true"> 
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#micon">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="micon">
+                        <a href="" class="navbar-brand">
+                            <h1 class="text-light"><b><i>MUSIC</i></b></h1>
+                        </a>
+                        <ul class="navbar-nav">
+                        <li class="navbar-item"><a href="" class="navbar-link text-light"><b>ABOUT</b></a> </li>
+                        <li class="navbar-item"><a href="" class="navbar-link text-light"><b>WORK</b></a></li>
+                        <li class="navbar-item"><a href="" class="navbar-link text-light"><b>CONTACT</b></a></li>
+                        </ul>
+                </div>   
+                    </nav><br><br>
+                    <div class="row">  <div class="col-sm-6">
+                   <img src="65.png" class="img-responsive  " style="position: relative" id="img"><br><br>
+                        </div>
+                        <div class="col-sm-6 ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="signup">sign up</div>
+                                    </div><br>
+                                    <div class="col-sm-6">
+                                        <div class="login">log in</div>
+                                    </div>
+                                </div>
+                               <div class="signup-form">  
+                               <div class="row">
+                             <div class="col-sm-6">
+
+                            <input type="text" name="name" class="form-control" id="name" placeholder="NAME" onchange="btndis(1)" oninput="ame(char1)">
+                                 <span id="msg1" class="text-warning"></span>
+                                   </div>
+
+                            <div class="col-sm-6">
+
+                        <input type="text" name="fathername" class="form-control" id="fname" placeholder="FATHER NAME" onchange="btndis(2)" oninput="fname(char2)">
+                        <span id="msg2" class="text-warning"></span>
+
+                </div></div>
+
+                            <div class="row">
+                            <div class="col-sm-6 text-light" id="a" >
+                                <b><i>GENDER:-</i></b> <br>              
+                                <input type="radio" name="gender" id="mgender"  value="male"  checked ><i>MALE</i>
+                                <input type="radio" name="gender" id="fgender" value="female"  checked ><i>FEMALE</i> </div><br>
+
+                            <div class="col-sm-6"> 
+
+                                    <input type="text" name="e-mail"  id="e-mail" class="form-control" placeholder="E-MAIL" onchange="btndis(6)" oninput="mail(char5)">
+                                <span id="msg5" class="text-warning"></span>
+
+                                 </div></div>
+
+                            <div class="row">
+                            <div class="col-sm-6" >
+
+                                 <input type="number" name="user mobileno." id="mno" class="form-control" placeholder="USER MOBILE NO." onchange="btndis(5)" oninput="mobile(char3)">                  
+                                <span id="msg3" class="text-warning"></span></div>                            
+
+
+
+                                <div class="col-sm-6" >
+
+                                <input type="number" name="phone no." id="phone" class="form-control" placeholder="FATHER MOBILE NO." onchange="btndis(4)" oninput="phone(char4)">                         
+                                    <span id="msg4" class="text-warning"></span> 
+                               </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6" >
+
+                                <input type="password" name="password" id="ps" placeholder="PASSWORD" class="form-control" onchange="btndis(7)">
+
+                            </div>
+
+                                <div class="col-sm-6">
+
+                                    <input type="password" name="confirm password" id="cps" placeholder="CONFIRM PASSWORD" class="form-control" oninput="confirm(char6)" onchange="btndis(8)">
+                                    <span id="msg6" class="text-warning"></span>
+        </div></div>
+                                  <div class="row"> 
+                                      <div class="col-sm-12">
+                                <div class="text-center">
+                        <input type="button" value="REGISTER" id="btn"></div>
+                                      </div>
+
+
+
+                                   </div>
+                    </div> 
+                            <script>
+                                  var char1=0;
+                                       function ame(){
+                                    
+                                document.getElementById('msg1').innerHTML=null;
+                             var a=document.getElementById('name').value; 
+                                for(i=0;i<a.length;i++){
+                                    if((!isNaN(a))||(a.charCode>31) &&(a.charCode<65||a.charCode>90) && (a.charCode<97||a.charCode>122)){
+                                     document.getElementById('msg1').innerHTML="please enter valid name.";
+                                     char1++;
+                                }
+                            }
+                            }
+                                  var char2=0; 
+                   function fname(){
+                                      
+                                document.getElementById('msg2').innerHTML=null;
+                                var b=document.getElementById('fname').value;
+                             for(i=0;i<b.length;i++){
+                                    if((!isNaN(b))||(b.charCode>31)&&(b.charCode<65|| b.charCode>90)&&(b.charCode<97 || b.charCode>122)){
+                           document.getElementById('msg2').innerHTML="please enter valid name.";
+                              char2++;
+                                  }
+                            }
+                   }
+                   var char3=0;
+                   function mobile(){
+                           
+                                 document.getElementById('msg3').innerHTML=null;
+                                 var c=document.getElementById('mno').value; 
+                            if(c.length!=10){
+                               document.getElementById('msg3').innerHTML="please enter valid no.";
+                                char3++;    
+                                }
+                                   if(c[0]<6 && c[0]>0) {
+                                       document.getElementById('msg3').innerHTML="no.is not correct";
+                                       char3++;
+                                       }
+                   } 
+                                var char4=0;
+                     function phone(){
+                            
+                                 document.getElementById('msg4').innerHTML=null;
+                                 var d=document.getElementById('phone').value; 
+                            if(d.length!=10){
+                               document.getElementById('msg4').innerHTML="please enter valid no.";
+                                char4++;    
+                                }
+                                   if(d[0]<6 && d[0]>0) {
+                                       document.getElementById('msg4').innerHTML="no.is not correct";
+                                       char4++;
+                                       }
+                     }
+
+  var char5="0";
+         function mail(){
+                     
+                        document.getElementById("msg5").innerHTML=null;
+                        var e=document.getElementById('e-mail').value;
+                        if(e.indexOf('@')<=0){
+                            document.getElementById('msg5').innerHTML="please enter valid e-mail";
+                            char5++;
+                        }
+                        if((e.charAt(e.length-4)!=".")&&(e.charAt(e.length-3)!="."))
+                            {
+                                document.getElementById("msg5").innerHTML="invalid email";
+                                char5++;
+                            }
+                    }
+                            var char6=0;  
+                    function confirm(){
+                              
+                                document.getElementById('msg6').innerHTML=null;
+                              var f=document.getElementById('ps').value;
+                              var g=document.getElementById('cps').value;        
+                        if((f.length>10)){
+                            document.getElementById('msg6').innerHTML="password should be 9 digits only";
+                             char6++;               
+                             }
+                    if(f!=g){
+                        document.getElementById('msg6').innerHTML="password does not match";
+                        char6++;
+                    }
+                    }
+                    function btndis(){ 
+                                      var count1=document.getElementById("name").value;
+                                      var count2=document.getElementById("fname").value;
+                                     // var count3=document.getElementById("mgender").value;
+                                      var count4=document.getElementById("phone").value;
+                                      var count5=document.getElementById("mno").value;
+                                      var count6=document.getElementById("e-mail").value;
+                                      var count7=document.getElementById("ps").value;
+                                      var count8=document.getElementById("cps").value;
+                                      if( (count1=="" || count2=="" ||  count4=="" || count5=="" || count6=="" || count7==""||count8=="")||(char1!=0 || char2!=0 || char4!=0 || char5!=0 || char6!=0))
+                                         {
+                                         document.getElementById("btn").disabled=true;
+                                      }
+                                      else{
+                                          document.getElementById("btn").disabled=false;
+                                        }
+                                     }
+                    </script>                            
+                    <div class="login-form">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text"  placeholder="E-MAIL" name="e-mail" class="form-control" id="mail">
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-12">
+                     <input type="password"  placeholder="PASSWORD" name="password" id="p" class="form-control"><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                        <div class="text-center">
+                        <input type="button" value="LOGIN" id="btn1">
+                                </div></div></div>
+                        <span><a href="#" class="text-info"><br> Forgot  username or password</a></span>
+                    </div>
+
+                        </div>
+
+                    </div>
+
+                 </body>
+            </html> 
